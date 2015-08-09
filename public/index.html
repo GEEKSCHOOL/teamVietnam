@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WS DEMO</title>
+</head>
+<body>
+<script type="text/javascript">
+	(function() {
+                var conn = new WebSocket("ws://localhost:6011/ws");
+                conn.onclose = function(evt) {
+                	console.log("closed");
+                    data.textContent = 'Connection closed';
+                }
+                conn.onmessage = function(evt) {
+                    console.log('event', event);
+                    data.textContent = evt.data;
+                }
+    })();
+</script>
+</body>
+</html>
